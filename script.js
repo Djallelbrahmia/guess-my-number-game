@@ -34,15 +34,10 @@ document.querySelector('.check').addEventListener('click', () => {
       highScore = score;
       document.querySelector('.highscore').textContent = highScore;
     }
-  } else if (guess > secretNumber) {
-    document.querySelector('.message').textContent = '📈 To High';
+  } else if (guess !== secretNumber) {
+    document.querySelector('.message').textContent =
+      guess > secretNumber ? '📈 To High' : '📉 To Low';
     score--;
     document.querySelector('.score').textContent = score;
-    console.log(score);
-  } else if (guess < secretNumber) {
-    document.querySelector('.message').textContent = '📉 To Low';
-    score--;
-    document.querySelector('.score').textContent = score;
-    console.log(score);
   }
 });
